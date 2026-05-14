@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Our Little Reel Diary 💖</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -16,84 +17,52 @@
 }
 
 body{
-  background: linear-gradient(135deg, #ff9ecb, #ffd1ea, #ffe4f3);
-  overflow-x:hidden;
+  background: radial-gradient(circle at top, #ff2e63, #1a0010 70%);
   color:#fff;
+  overflow-x:hidden;
 }
 
-/* MULTI LAYER GLOW */
-.glow{
-  position:fixed;
-  width:500px;
-  height:500px;
-  background: radial-gradient(circle, rgba(255,105,180,0.35), transparent);
-  filter:blur(120px);
-  top:-120px;
-  left:50%;
-  transform:translateX(-50%);
-}
-
-.glow2{
-  position:fixed;
-  width:400px;
-  height:400px;
-  background: radial-gradient(circle, rgba(255,0,120,0.25), transparent);
-  filter:blur(120px);
-  bottom:-100px;
-  right:-100px;
-}
-
-/* HEART BACKGROUND */
-.hearts{
-  position:fixed;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  z-index:0;
-}
-
+/* FLOATING HEARTS */
 .hearts span{
-  position:absolute;
-  color:rgba(255,255,255,0.35);
+  position:fixed;
+  bottom:-20px;
+  color:rgba(255,80,120,0.25);
   font-size:18px;
-  animation: float 12s linear infinite;
+  animation: float 10s linear infinite;
 }
 
-/* random positions */
-.hearts span:nth-child(1){left:5%; animation-delay:0s;}
-.hearts span:nth-child(2){left:15%; animation-delay:2s;}
-.hearts span:nth-child(3){left:25%; animation-delay:4s;}
-.hearts span:nth-child(4){left:35%; animation-delay:1s;}
-.hearts span:nth-child(5){left:45%; animation-delay:6s;}
-.hearts span:nth-child(6){left:55%; animation-delay:3s;}
-.hearts span:nth-child(7){left:65%; animation-delay:5s;}
-.hearts span:nth-child(8){left:75%; animation-delay:2s;}
-.hearts span:nth-child(9){left:85%; animation-delay:7s;}
-.hearts span:nth-child(10){left:95%; animation-delay:4s;}
+.hearts span:nth-child(1){left:10%; animation-delay:0s;}
+.hearts span:nth-child(2){left:25%; animation-delay:2s;}
+.hearts span:nth-child(3){left:40%; animation-delay:4s;}
+.hearts span:nth-child(4){left:60%; animation-delay:1s;}
+.hearts span:nth-child(5){left:75%; animation-delay:3s;}
+.hearts span:nth-child(6){left:90%; animation-delay:5s;}
 
 @keyframes float{
-  0%{ transform:translateY(100vh); opacity:0; }
-  10%{ opacity:1; }
-  100%{ transform:translateY(-120vh); opacity:0; }
+  0%{transform:translateY(0); opacity:0;}
+  10%{opacity:1;}
+  100%{transform:translateY(-120vh); opacity:0;}
 }
 
 /* HEADER */
 .header{
   text-align:center;
-  padding:80px 20px 30px;
-  position:relative;
-  z-index:2;
+  padding:80px 20px 40px;
 }
 
 .header h1{
-  font-size:32px;
-  font-weight:600;
+  font-size:34px;
+  font-weight:700;
+  color:#ff4d6d;
+  text-shadow:0 0 20px rgba(255,0,80,0.6);
 }
 
 .header p{
-  font-size:14px;
-  opacity:0.85;
   margin-top:10px;
+  font-size:15px;
+  font-weight:500;
+  color:#ffd6dc;
+  text-shadow:0 0 10px rgba(255,0,80,0.4);
 }
 
 /* SECTION */
@@ -101,17 +70,8 @@ body{
   padding:30px 20px;
   max-width:1000px;
   margin:auto;
-  position:relative;
-  z-index:2;
 }
 
-.section-title{
-  font-size:16px;
-  margin-bottom:18px;
-  color:#ff2e86;
-}
-
-/* GRID */
 .container{
   display:grid;
   gap:24px;
@@ -119,11 +79,11 @@ body{
 
 /* CARD */
 .card{
-  background: rgba(255,255,255,0.25);
-  border-radius:24px;
-  padding:12px;
-  backdrop-filter:blur(18px);
-  box-shadow:0 10px 35px rgba(255,0,120,0.2);
+  background: rgba(255,255,255,0.05);
+  border-radius:22px;
+  padding:10px;
+  backdrop-filter: blur(15px);
+  box-shadow:0 10px 40px rgba(255,0,80,0.2);
   transition:0.4s ease;
   opacity:0;
   transform:translateY(40px);
@@ -135,27 +95,30 @@ body{
 }
 
 .card:hover{
-  transform:translateY(-6px) scale(1.02);
-  box-shadow:0 15px 45px rgba(255,0,120,0.35);
+  transform:scale(1.02);
+  box-shadow:0 15px 50px rgba(255,0,80,0.4);
 }
 
 iframe{
   width:100%;
   height:480px;
   border:none;
-  border-radius:18px;
+  border-radius:16px;
 }
 
 /* FOOTER */
 .footer{
   text-align:center;
   padding:60px 20px;
-  font-size:13px;
-  opacity:0.75;
-  position:relative;
-  z-index:2;
+  font-size:16px;
+  font-weight:600;
+  color:#ff4d6d;
+  text-decoration: underline;
+  text-underline-offset:6px;
+  text-shadow:0 0 15px rgba(255,0,80,0.6);
 }
 
+/* GRID */
 @media(min-width:768px){
   .container{
     grid-template-columns:repeat(2,1fr);
@@ -166,49 +129,64 @@ iframe{
 
 <body>
 
-<div class="glow"></div>
-<div class="glow2"></div>
-
 <div class="hearts">
-  <span>♡</span><span>♡</span><span>♡</span><span>♡</span><span>♡</span>
-  <span>♡</span><span>♡</span><span>♡</span><span>♡</span><span>♡</span>
+  <span>❤</span><span>❤</span><span>❤</span>
+  <span>❤</span><span>❤</span><span>❤</span>
 </div>
 
 <div class="header">
-  <h1>Our Little Reel Diary 💖</h1>
+  <h1>Our Little Reel Diary ❤️</h1>
   <p>proof that we said we’ll recreate these…</p>
 </div>
 
 <div class="section">
-  <div class="section-title">our reels 💗</div>
-
   <div class="container">
 
-    <!-- keep your reels same -->
-    <!-- example -->
-    <div class="card">
-      <iframe src="https://www.instagram.com/reel/DT-VVPCiJ65/embed"></iframe>
-    </div>
+    <!-- KEEP YOUR REELS -->
+    <div class="card"><iframe src="https://www.instagram.com/reel/DT-VVPCiJ65/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DUKlaD-CpOd/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DWvMMRyiAF5/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DUhZZwzgfz1/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DXeMEj8DB3M/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DWlPYdQjs5S/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DTW98tXk8EY/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DYMUhZChq0D/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DWb_jloBGIa/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DUx9QpJgA7r/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DXW16DbgZfR/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DWDsmnZAgFn/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DUdECChkuSG/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DWRTl9njB7a/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DXqpTmvjKhq/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DXWmDr8jH78/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DYGy1c_q5LD/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DXrwI8vjY2I/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DQo9f2mkxyz/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DXg7MoDEypU/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DYROJMKNF4v/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DVpZcoXEYjs/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/p/DXcj2bHjfa5/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DTxXdoMET3S/embed"></iframe></div>
 
   </div>
 </div>
 
 <div class="footer">
-  we’re actually doing these someday… right?
+  we’re actually doing these someday… right? ❤️
 </div>
 
 <script>
 const cards = document.querySelectorAll('.card');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('show');
     }
   });
-}, { threshold:0.2 });
+},{threshold:0.2});
 
-cards.forEach(card => observer.observe(card));
+cards.forEach(card=>observer.observe(card));
 </script>
 
 </body>
