@@ -65,23 +65,6 @@ body{
   color:#ffd6e5;
 }
 
-/* BUTTON */
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:10px 20px;
-  border-radius:30px;
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.3);
-  color:#fff;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-.btn:hover{
-  background:rgba(255,255,255,0.2);
-}
-
 /* SECTION */
 .section{
   padding:30px 20px;
@@ -153,11 +136,9 @@ iframe{
 <div class="header">
   <h1>Our Little Reel Diary 💖</h1>
   <p>proof that we said we’ll recreate these…</p>
-
-  <a href="#reels" class="btn">see more ↓</a>
 </div>
 
-<div class="section" id="reels">
+<div class="section">
   <div class="container">
 
     <!-- ALL REELS -->
@@ -207,16 +188,16 @@ const observer = new IntersectionObserver(entries=>{
 });
 cards.forEach(card=>observer.observe(card));
 
-/* HEART RAIN GENERATOR */
+/* HEART RAIN */
 const container = document.getElementById('hearts');
 
-for(let i=0;i<60;i++){
+for(let i=0;i<80;i++){
   let heart = document.createElement('span');
   heart.innerHTML = '❤';
 
   heart.style.left = Math.random()*100 + 'vw';
   heart.style.animationDuration = (5 + Math.random()*5) + 's';
-  heart.style.fontSize = (10 + Math.random()*20) + 'px';
+  heart.style.fontSize = (10 + Math.random()*18) + 'px';
 
   container.appendChild(heart);
 }
