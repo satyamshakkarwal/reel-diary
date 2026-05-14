@@ -17,52 +17,69 @@
 }
 
 body{
-  background: radial-gradient(circle at top, #ff6b9a, #2b0018 70%);
+  background: radial-gradient(circle at top, #ff6b9a, #1a0010 70%);
   color:#fff;
   overflow-x:hidden;
 }
 
-/* SOFT FLOATING HEARTS */
-.hearts span{
+/* HEART RAIN */
+.hearts{
   position:fixed;
-  bottom:-20px;
-  color:rgba(255,255,255,0.15);
-  font-size:18px;
-  animation: float 12s linear infinite;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:0;
 }
 
-.hearts span:nth-child(1){left:10%; animation-delay:0s;}
-.hearts span:nth-child(2){left:30%; animation-delay:3s;}
-.hearts span:nth-child(3){left:50%; animation-delay:6s;}
-.hearts span:nth-child(4){left:70%; animation-delay:2s;}
-.hearts span:nth-child(5){left:90%; animation-delay:8s;}
+.hearts span{
+  position:absolute;
+  color:rgba(255,120,160,0.25);
+  font-size:14px;
+  animation: rain linear infinite;
+}
 
-@keyframes float{
-  0%{transform:translateY(0); opacity:0;}
-  10%{opacity:1;}
-  100%{transform:translateY(-120vh); opacity:0;}
+@keyframes rain{
+  0%{ transform:translateY(-10vh); opacity:0; }
+  10%{ opacity:1; }
+  100%{ transform:translateY(110vh); opacity:0; }
 }
 
 /* HEADER */
 .header{
   text-align:center;
   padding:90px 20px 40px;
+  position:relative;
+  z-index:2;
 }
 
 .header h1{
   font-size:36px;
   font-weight:700;
-  color:#ffffff;
-  letter-spacing:1px;
+  color:#fff;
   text-shadow:0 0 25px rgba(255,120,160,0.6);
 }
 
 .header p{
-  margin-top:12px;
+  margin-top:10px;
   font-size:15px;
   color:#ffd6e5;
-  font-weight:400;
-  text-shadow:0 0 10px rgba(255,120,160,0.4);
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 20px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.3);
+  color:#fff;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:rgba(255,255,255,0.2);
 }
 
 /* SECTION */
@@ -70,9 +87,10 @@ body{
   padding:30px 20px;
   max-width:1000px;
   margin:auto;
+  position:relative;
+  z-index:2;
 }
 
-/* GRID */
 .container{
   display:grid;
   gap:24px;
@@ -85,7 +103,7 @@ body{
   padding:10px;
   backdrop-filter: blur(18px);
   box-shadow:0 10px 40px rgba(255,0,120,0.15);
-  transition:0.4s ease;
+  transition:0.4s;
   opacity:0;
   transform:translateY(40px);
 }
@@ -113,10 +131,9 @@ iframe{
   padding:60px 20px;
   font-size:16px;
   font-weight:600;
-  color:#ffffff;
+  color:#fff;
   border-bottom:2px solid #ff6b9a;
   display:inline-block;
-  text-shadow:0 0 10px rgba(255,120,160,0.5);
 }
 
 /* GRID */
@@ -130,20 +147,20 @@ iframe{
 
 <body>
 
-<div class="hearts">
-  <span>❤</span><span>❤</span><span>❤</span>
-  <span>❤</span><span>❤</span>
-</div>
+<!-- HEARTS -->
+<div class="hearts" id="hearts"></div>
 
 <div class="header">
   <h1>Our Little Reel Diary 💖</h1>
   <p>proof that we said we’ll recreate these…</p>
+
+  <a href="#reels" class="btn">see more ↓</a>
 </div>
 
-<div class="section">
+<div class="section" id="reels">
   <div class="container">
 
-    <!-- YOUR REELS -->
+    <!-- ALL REELS -->
     <div class="card"><iframe src="https://www.instagram.com/reel/DT-VVPCiJ65/embed"></iframe></div>
     <div class="card"><iframe src="https://www.instagram.com/reel/DUKlaD-CpOd/embed"></iframe></div>
     <div class="card"><iframe src="https://www.instagram.com/reel/DWvMMRyiAF5/embed"></iframe></div>
@@ -153,6 +170,21 @@ iframe{
     <div class="card"><iframe src="https://www.instagram.com/reel/DTW98tXk8EY/embed"></iframe></div>
     <div class="card"><iframe src="https://www.instagram.com/reel/DYMUhZChq0D/embed"></iframe></div>
     <div class="card"><iframe src="https://www.instagram.com/reel/DWb_jloBGIa/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DUx9QpJgA7r/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DXW16DbgZfR/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DWDsmnZAgFn/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DUdECChkuSG/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DWRTl9njB7a/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DXqpTmvjKhq/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DXWmDr8jH78/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DYGy1c_q5LD/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DXrwI8vjY2I/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DQo9f2mkxyz/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DXg7MoDEypU/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DYROJMKNF4v/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DVpZcoXEYjs/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/p/DXcj2bHjfa5/embed"></iframe></div>
+    <div class="card"><iframe src="https://www.instagram.com/reel/DTxXdoMET3S/embed"></iframe></div>
 
   </div>
 </div>
@@ -164,17 +196,30 @@ iframe{
 </div>
 
 <script>
+/* SCROLL ANIMATION */
 const cards = document.querySelectorAll('.card');
-
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('show');
     }
   });
-},{threshold:0.2});
-
+});
 cards.forEach(card=>observer.observe(card));
+
+/* HEART RAIN GENERATOR */
+const container = document.getElementById('hearts');
+
+for(let i=0;i<60;i++){
+  let heart = document.createElement('span');
+  heart.innerHTML = '❤';
+
+  heart.style.left = Math.random()*100 + 'vw';
+  heart.style.animationDuration = (5 + Math.random()*5) + 's';
+  heart.style.fontSize = (10 + Math.random()*20) + 'px';
+
+  container.appendChild(heart);
+}
 </script>
 
 </body>
